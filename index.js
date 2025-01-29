@@ -28,7 +28,7 @@ async function run(request) {
   const result = await model.generateContent(prompt);
   const response = await result.response;
   const text = response.text();
-  console.log(text,'in function');
+  // console.log(text,'in function');
   return  text;
 }
 
@@ -37,7 +37,7 @@ async function run(request) {
 app.get('/:requests', async(req, res)=>{
   let request = req.params.requests.toString()
   let text = await run(request);
-  console.log(text,'after call')
+  console.log(text)
   res.status(200); 
   res.send({"message":text}); 
 
