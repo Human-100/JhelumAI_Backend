@@ -32,7 +32,10 @@ async function run(request) {
   return  text;
 }
 
+app.get('/', async(req, res)=>{
+res.send("It works")
 
+}); 
 
 app.get('/:requests', async(req, res)=>{
   let request = req.params.requests.toString()
